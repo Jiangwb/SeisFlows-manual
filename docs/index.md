@@ -29,7 +29,7 @@ After step 4&6, SeisFlows can be used for real data.
 
 ## Need to do:
 1. Test double difference adjoint tomography
-2. Convert 3D seismic data to 2D.
+2. Convert 3D seismic data to 2D. https://github.com/Jiangwb/2DNoise_Adjoint_tomography_backup/tree/master/seiscode/3D_2D
 
 ## SeisFlows Examples
 The examples link is not available now, you can find SeisFlows examples in my GitHub repositories:      
