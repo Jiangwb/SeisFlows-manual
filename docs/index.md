@@ -1,8 +1,9 @@
-# SeisFlows manual: Add new functions to SeisFlows
+# SeisFlows develop log: Add new functions to SeisFlows
 
-SeisFlows is a open source FWI package developed by Ryan Modrak. For more information, please refer to [Introduction](https://seisflows.readthedocs.io/en/latest/)
+SeisFlows is a open source FWI package developed by Ryan Modrak.  
+For more information, please refer to [Introduction](https://seisflows.readthedocs.io/en/latest/)
 
-## What I have done
+## What I have done:
 1. `seisflows/plugins/adjoint.py`       
     -Envelope, avoid divide zero when mute near-offset data.
 2. `seisflows/tools/signal.py` `seisflows/preprocess/base.py`      
@@ -30,6 +31,7 @@ After step 4&6, SeisFlows can be used for real data.
 ## Need to do:
 1. Test double difference adjoint tomography
 2. Convert 3D seismic data to 2D. [code](https://github.com/Jiangwb/2DNoise_Adjoint_tomography_backup/tree/master/seiscode/3D_2D)
+3. Submit the job to cluster
 
 ## SeisFlows Examples
 The examples link is not available now, you can find SeisFlows examples in my GitHub repositories:      
