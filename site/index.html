@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>SeisFlows manual: Add new functions to SeisFlows - SeisFlows Manual</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "SeisFlows manual: Add new functions to SeisFlows";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> SeisFlows Manual</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href=".">SeisFlows manual: Add new functions to SeisFlows</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#seisflows-manual-add-new-functions-to-seisflows">SeisFlows manual: Add new functions to SeisFlows</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#what-i-have-done">What I have done</a></li>
+        
+            <li><a class="toctree-l3" href="#unsolved-problem">Unsolved problem:</a></li>
+        
+            <li><a class="toctree-l3" href="#need-to-do">Need to do:</a></li>
+        
+            <li><a class="toctree-l3" href="#seisflows-examples">SeisFlows Examples</a></li>
+        
+            <li><a class="toctree-l3" href="#commands">Commands</a></li>
+        
+            <li><a class="toctree-l3" href="#project-layout">Project layout</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">SeisFlows Manual</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>SeisFlows manual: Add new functions to SeisFlows</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="seisflows-manual-add-new-functions-to-seisflows">SeisFlows manual: Add new functions to SeisFlows</h1>
+<p>SeisFlows is a open source FWI package developed by Ryan Modrak. For more information, please refer to <a href="https://seisflows.readthedocs.io/en/latest/">Introduction</a></p>
+<h2 id="what-i-have-done">What I have done</h2>
+<ol>
+<li><code>seisflows/plugins/adjoint.py</code>     <br />
+    -Envelope, avoid divide zero when mute near-offset data.</li>
+<li><code>seisflows/tools/signal.py</code> <code>seisflows/preprocess/base.py</code>    <br />
+    -Apply tapered mask to shot gather, muting body waves and later waves to preserve surface wave only.</li>
+<li><code>seisflows/workflow/migration.py</code> <code>seisflows/solver/base.py</code>    <br />
+    -Fixed some bugs in RTM. The original code failed to get correct adjoint source.</li>
+<li>
+<p><code>seisflows/solver/base.py</code>     <br />
+    -Allow to use different STATION file for different SOURCE. The naming rule must be same. The station name must be STATIONS_(shot_index). Add a new parameter 'PAR.USER_DEFINE_STATION' to control this feature. Remember to set use_existing_STATIONS=.true. when you use this option. You can ignore 'PAR.USER_DEFINE_STATION' if you use a fixed receiver array in synthetic test. This fixed receiver array can be define either by STATIONS file under specfem2d-master/DATA or parameters in Par_file.</p>
+</li>
+<li>
+<p>Add script to create mask model and plot misfit curves</p>
+</li>
+<li>
+<p>Add matlab scripts to convert SEGY data to SU format for SeisFlows. And Output geometry files</p>
+</li>
+<li>
+<p>Add scripts to generate simple specfem2d binary model</p>
+</li>
+<li>
+<p>Can use the latest SPECFEM2D instead of the specified version <code>d745c542</code></p>
+</li>
+</ol>
+<p>After step 4&amp;6, SeisFlows can be used for real data.</p>
+<h2 id="unsolved-problem">Unsolved problem:</h2>
+<ol>
+<li>Use GPU version SPECFEM2D in SeisFlows</li>
+<li>Tikhonov regularization</li>
+</ol>
+<h2 id="need-to-do">Need to do:</h2>
+<ol>
+<li>Test double difference adjoint tomography</li>
+</ol>
+<h2 id="seisflows-examples">SeisFlows Examples</h2>
+<p>The examples link is not available now, you can find SeisFlows examples in my GitHub repositories:    <br />
+<a href="https://github.com/Jiangwb/SeisFlows-examples">SeisFlows Examples</a>     <br />
+<code>Two layer model</code> - Kernel tests    <br />
+<code>Foothill model</code>  - Body/surface wave FWI tests      <br />
+<code>Marmousi model</code>  - Body/surface wave FWI tests        </p>
+<h2 id="commands">Commands</h2>
+<ul>
+<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
+<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
+<li><code>mkdocs build</code> - Build the documentation site.</li>
+<li><code>mkdocs help</code> - Print this help message.</li>
+</ul>
+<h2 id="project-layout">Project layout</h2>
+<pre><code>mkdocs.yml    # The configuration file.
+docs/
+    index.md  # The documentation homepage.
+    ...       # Other markdown pages, images and other files.
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2019-06-03 05:47:35
+-->
