@@ -1,4 +1,4 @@
-# SeisFlows develop log: Add new functions to SeisFlows
+# SeisFlows development log: Add new functions to SeisFlows
 
 SeisFlows is a open source FWI package developed by Ryan Modrak.  
 For more information, please refer to [Introduction](https://seisflows.readthedocs.io/en/latest/)
