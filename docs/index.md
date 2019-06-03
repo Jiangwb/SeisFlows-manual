@@ -37,13 +37,6 @@ The examples link is not available now, you can find SeisFlows examples in my Gi
 `Foothill model`  - Body/surface wave FWI tests        
 `Marmousi model`  - Body/surface wave FWI tests        
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
-
 ## Project layout
 
     mkdocs.yml    # The configuration file.
