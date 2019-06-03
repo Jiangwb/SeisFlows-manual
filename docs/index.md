@@ -24,7 +24,7 @@ After step 4&6, SeisFlows can be used for real data.
 
 ## Unsolved problem:
 
-1. Use GPU version SPECFEM2D in SeisFlows
+1. Use GPU version SPECFEM2D in SeisFlows, try devel version
 2. Tikhonov regularization
 
 ## Need to do:
