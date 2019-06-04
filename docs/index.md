@@ -14,7 +14,7 @@ For more information, please refer to [Introduction](https://seisflows.readthedo
     -Fix some bugs in RTM. The original code failed to get correct adjoint source.  
     
 4. `seisflows/solver/base.py`       
-    -Allow to use different STATION file for different SOURCE. The naming rule must be same. The station name must be STATIONS_(shot_index). Add a new parameter 'PAR.USER_DEFINE_STATION' to control this feature. Remember to set use_existing_STATIONS=.true. when you use this option. You can ignore 'PAR.USER_DEFINE_STATION' if you use a fixed receiver array in synthetic test. This fixed receiver array can be define either by STATIONS file under specfem2d-master/DATA or parameters in Par_file.     
+    -Allow to use different STATION file for different SOURCE. The naming rule must be the same. The station name must be STATIONS_(shot_index). Add a new parameter 'PAR.USER_DEFINE_STATION' to control this feature. Remember to set use_existing_STATIONS=.true. when you use this option. You can ignore 'PAR.USER_DEFINE_STATION' if you use a fixed receiver array in synthetic test. This fixed receiver array can be defined either by STATIONS file under specfem2d-master/DATA or parameters in Par_file.     
     
 5. Add script to create mask model and plot misfit curves   
     
@@ -22,17 +22,17 @@ For more information, please refer to [Introduction](https://seisflows.readthedo
     
 7. Add scripts to generate simple specfem2d binary model    
     
-8. Can use the latest SPECFEM2D instead of the specified version `d745c542`   
+8. We can use the latest SPECFEM2D instead of the specified version `d745c542`   
     
-After step 4&6, SeisFlows can be used for real data.
+After steps 4&6, SeisFlows can be used for real data.
 
 ## Unsolved problems:
 
-1. Use GPU version SPECFEM2D in SeisFlows, try devel version    
+1. Use GPU version SPECFEM2D in SeisFlows, and try devel version    
     
 2. Tikhonov regularization  
     
-## Need to do:
+## Future work:
 1. Test double difference adjoint tomography    
     
 2. Convert 3D seismic data to 2D. [code](https://github.com/Jiangwb/2DNoise_Adjoint_tomography_backup/tree/master/seiscode/3D_2D)    

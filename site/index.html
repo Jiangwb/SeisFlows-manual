@@ -61,7 +61,7 @@
         
             <li><a class="toctree-l3" href="#unsolved-problems">Unsolved problems:</a></li>
         
-            <li><a class="toctree-l3" href="#need-to-do">Need to do:</a></li>
+            <li><a class="toctree-l3" href="#future-work">Future work:</a></li>
         
             <li><a class="toctree-l3" href="#seisflows-examples">SeisFlows examples</a></li>
         
@@ -120,11 +120,11 @@ For more information, please refer to <a href="https://seisflows.readthedocs.io/
 </li>
 <li>
 <p><code>seisflows/workflow/migration.py</code> <code>seisflows/solver/base.py</code>    <br />
-    -Fixed some bugs in RTM. The original code failed to get correct adjoint source.  </p>
+    -Fix some bugs in RTM. The original code failed to get correct adjoint source.  </p>
 </li>
 <li>
 <p><code>seisflows/solver/base.py</code>     <br />
-    -Allow to use different STATION file for different SOURCE. The naming rule must be same. The station name must be STATIONS_(shot_index). Add a new parameter 'PAR.USER_DEFINE_STATION' to control this feature. Remember to set use_existing_STATIONS=.true. when you use this option. You can ignore 'PAR.USER_DEFINE_STATION' if you use a fixed receiver array in synthetic test. This fixed receiver array can be define either by STATIONS file under specfem2d-master/DATA or parameters in Par_file.     </p>
+    -Allow to use different STATION file for different SOURCE. The naming rule must be the same. The station name must be STATIONS_(shot_index). Add a new parameter 'PAR.USER_DEFINE_STATION' to control this feature. Remember to set use_existing_STATIONS=.true. when you use this option. You can ignore 'PAR.USER_DEFINE_STATION' if you use a fixed receiver array in synthetic test. This fixed receiver array can be defined either by STATIONS file under specfem2d-master/DATA or parameters in Par_file.     </p>
 </li>
 <li>
 <p>Add script to create mask model and plot misfit curves   </p>
@@ -136,20 +136,20 @@ For more information, please refer to <a href="https://seisflows.readthedocs.io/
 <p>Add scripts to generate simple specfem2d binary model    </p>
 </li>
 <li>
-<p>Can use the latest SPECFEM2D instead of the specified version <code>d745c542</code>   </p>
+<p>We can use the latest SPECFEM2D instead of the specified version <code>d745c542</code>   </p>
 </li>
 </ol>
-<p>After step 4&amp;6, SeisFlows can be used for real data.</p>
+<p>After steps 4&amp;6, SeisFlows can be used for real data.</p>
 <h2 id="unsolved-problems">Unsolved problems:</h2>
 <ol>
 <li>
-<p>Use GPU version SPECFEM2D in SeisFlows, try devel version    </p>
+<p>Use GPU version SPECFEM2D in SeisFlows, and try devel version    </p>
 </li>
 <li>
 <p>Tikhonov regularization  </p>
 </li>
 </ol>
-<h2 id="need-to-do">Need to do:</h2>
+<h2 id="future-work">Future work:</h2>
 <ol>
 <li>
 <p>Test double difference adjoint tomography    </p>
@@ -213,5 +213,5 @@ docs/
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-06-04 00:14:18
+Build Date UTC : 2019-06-04 00:21:39
 -->
