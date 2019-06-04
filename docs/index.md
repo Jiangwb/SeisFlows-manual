@@ -40,12 +40,12 @@ After steps 4&6, SeisFlows can be used for real data.
 3. Submit the job to cluster
 
 ## SeisFlows examples
-The examples link is not available now, you can find SeisFlows examples in my GitHub repositories:      
+The example links are not available now. You may find SeisFlows examples in my GitHub repositories:      
 [SeisFlows Examples](https://github.com/Jiangwb/SeisFlows-examples)       
 `Two layer model` - Kernel tests      
 `Foothill model`  - Body/surface wave FWI tests        
 `Marmousi model`  - Body/surface wave FWI tests        
-Will upload more examples in the future
+I will upload more examples in the future.
 
 ## Project layout
 
