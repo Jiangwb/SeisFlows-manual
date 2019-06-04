@@ -33,7 +33,7 @@ After step 4&6, SeisFlows can be used for real data.
 2. Convert 3D seismic data to 2D. [code](https://github.com/Jiangwb/2DNoise_Adjoint_tomography_backup/tree/master/seiscode/3D_2D)
 3. Submit the job to cluster
 
-## SeisFlows Examples
+## SeisFlows examples
 The examples link is not available now, you can find SeisFlows examples in my GitHub repositories:      
 [SeisFlows Examples](https://github.com/Jiangwb/SeisFlows-examples)       
 `Two layer model` - Kernel tests      
