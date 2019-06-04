@@ -23,7 +23,7 @@ For more information, please refer to [Introduction](https://seisflows.readthedo
 
 After step 4&6, SeisFlows can be used for real data.
 
-## Unsolved problem:
+## Unsolved problems:
 
 1. Use GPU version SPECFEM2D in SeisFlows, try devel version
 2. Tikhonov regularization
