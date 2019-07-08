@@ -24,16 +24,19 @@ For more information, please refer to [Introduction](https://seisflows.readthedo
     
 8. We can use the latest SPECFEM2D instead of the specified version `d745c542`   
     
+9. `seisflows/preprocess/base_mbpf.py`      
+   -Apply a moving bandpass filter strategy to obtain adjoint source   
+
+10. Use GPU version SPECFEM2D in SeisFlows, but I found that only kappa and mu kernel are non-zero. Thus, kernel parameters are kappa and mu, model parameters are vp and vs.    
+
 After steps 4&6, SeisFlows can be used for real data.
 
 ## Unsolved problems:
 
-1. Use GPU version SPECFEM2D in SeisFlows, and try devel version    
-    
-2. Tikhonov regularization  
+1. Tikhonov regularization  
     
 ## Future work:
-1. Test double difference adjoint tomography    
+1. Test double difference adjoint tomography (DONE)    
     
 2. Convert 3D seismic data to 2D. [code](https://github.com/Jiangwb/2DNoise_Adjoint_tomography_backup/tree/master/seiscode/3D_2D)    
 
@@ -46,6 +49,11 @@ The example links are not available now. You may find SeisFlows examples in my G
 `Foothill model`  - Body/surface wave FWI tests        
 `Marmousi model`  - Body/surface wave FWI tests        
 I will upload more examples in the future.
+
+## How to generate 2D model for SeisFlows
+step 1: convert mdl model to SEP model      
+step 2: run SEM forward modeling to generate ascii model        
+step 3: convert ascii model to gll model by using a fortran script       
 
 ## Project layout
 

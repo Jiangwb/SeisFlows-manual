@@ -65,6 +65,8 @@
         
             <li><a class="toctree-l3" href="#seisflows-examples">SeisFlows examples</a></li>
         
+            <li><a class="toctree-l3" href="#how-to-generate-2d-model-for-seisflows">How to generate 2D model for SeisFlows</a></li>
+        
             <li><a class="toctree-l3" href="#project-layout">Project layout</a></li>
         
         </ul>
@@ -138,21 +140,23 @@ For more information, please refer to <a href="https://seisflows.readthedocs.io/
 <li>
 <p>We can use the latest SPECFEM2D instead of the specified version <code>d745c542</code>   </p>
 </li>
+<li>
+<p><code>seisflows/preprocess/base_mbpf.py</code>    <br />
+   -Apply a moving bandpass filter strategy to obtain adjoint source   </p>
+</li>
+<li>
+<p>Use GPU version SPECFEM2D in SeisFlows, but I found that only kappa and mu kernel are non-zero. Thus, kernel parameters are kappa and mu, model parameters are vp and vs.    </p>
+</li>
 </ol>
 <p>After steps 4&amp;6, SeisFlows can be used for real data.</p>
 <h2 id="unsolved-problems">Unsolved problems:</h2>
 <ol>
-<li>
-<p>Use GPU version SPECFEM2D in SeisFlows, and try devel version    </p>
-</li>
-<li>
-<p>Tikhonov regularization  </p>
-</li>
+<li>Tikhonov regularization  </li>
 </ol>
 <h2 id="future-work">Future work:</h2>
 <ol>
 <li>
-<p>Test double difference adjoint tomography    </p>
+<p>Test double difference adjoint tomography (DONE)    </p>
 </li>
 <li>
 <p>Convert 3D seismic data to 2D. <a href="https://github.com/Jiangwb/2DNoise_Adjoint_tomography_backup/tree/master/seiscode/3D_2D">code</a>    </p>
@@ -168,6 +172,10 @@ For more information, please refer to <a href="https://seisflows.readthedocs.io/
 <code>Foothill model</code>  - Body/surface wave FWI tests      <br />
 <code>Marmousi model</code>  - Body/surface wave FWI tests      <br />
 I will upload more examples in the future.</p>
+<h2 id="how-to-generate-2d-model-for-seisflows">How to generate 2D model for SeisFlows</h2>
+<p>step 1: convert mdl model to SEP model    <br />
+step 2: run SEM forward modeling to generate ascii model      <br />
+step 3: convert ascii model to gll model by using a fortran script       </p>
 <h2 id="project-layout">Project layout</h2>
 <pre><code>mkdocs.yml    # The configuration file.
 docs/
@@ -213,5 +221,5 @@ docs/
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-06-04 00:24:27
+Build Date UTC : 2019-07-08 14:02:15
 -->
