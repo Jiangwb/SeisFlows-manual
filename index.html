@@ -147,12 +147,12 @@ For more information, please refer to <a href="https://seisflows.readthedocs.io/
 <li>
 <p>Use GPU version SPECFEM2D in SeisFlows, but I found that only kappa, mu and rho kernel are non-zero. Thus, kernel parameters are kappa and mu, model parameters are vp and vs. Another issue is cuda memory error when I use the devel version of specfem2d, but it is fine with master version       </p>
 </li>
+<li>
+<p>Fixed some bugs in Tikhonov regularization, but the inversion results are not as good as gradient smoothing, need more tests  </p>
+</li>
 </ol>
 <p>After steps 4&amp;6, SeisFlows can be used for real data.</p>
 <h2 id="unsolved-problems">Unsolved problems:</h2>
-<ol>
-<li>Tikhonov regularization  </li>
-</ol>
 <h2 id="future-work">Future work:</h2>
 <ol>
 <li>
@@ -162,7 +162,7 @@ For more information, please refer to <a href="https://seisflows.readthedocs.io/
 <p>Convert 3D seismic data to 2D. <a href="https://github.com/Jiangwb/2DNoise_Adjoint_tomography_backup/tree/master/seiscode/3D_2D">code</a>    </p>
 </li>
 <li>
-<p>Submit the job to cluster</p>
+<p>How to submit the job to cluster</p>
 </li>
 </ol>
 <h2 id="seisflows-examples">SeisFlows examples</h2>
@@ -170,7 +170,8 @@ For more information, please refer to <a href="https://seisflows.readthedocs.io/
 <a href="https://github.com/Jiangwb/SeisFlows-examples">SeisFlows Examples</a>     <br />
 <code>Two layer model</code> - Kernel tests    <br />
 <code>Foothill model</code>  - Body/surface wave FWI tests      <br />
-<code>Marmousi model</code>  - Body/surface wave FWI tests      <br />
+<code>Marmousi model</code>  - Body/surface wave FWI tests
+<code>Foothill model-GPU</code> - Foothill model test by using GPU
 I will upload more examples in the future.</p>
 <h2 id="how-to-generate-2d-model-for-seisflows">How to generate 2D model for SeisFlows</h2>
 <p>step 1: convert mdl model to SEP model    <br />
@@ -221,5 +222,5 @@ docs/
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-07-09 02:22:57
+Build Date UTC : 2019-07-09 07:31:55
 -->
