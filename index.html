@@ -145,7 +145,7 @@ For more information, please refer to <a href="https://seisflows.readthedocs.io/
    -Apply a moving bandpass filter strategy to obtain adjoint source   </p>
 </li>
 <li>
-<p>Use GPU version SPECFEM2D in SeisFlows, but I found that only kappa and mu kernel are non-zero. Thus, kernel parameters are kappa and mu, model parameters are vp and vs.    </p>
+<p>Use GPU version SPECFEM2D in SeisFlows, but I found that only kappa, mu and rho kernel are non-zero. Thus, kernel parameters are kappa and mu, model parameters are vp and vs. Another issue is cuda memory error when I use the devel version of specfem2d, but it is fine with master version       </p>
 </li>
 </ol>
 <p>After steps 4&amp;6, SeisFlows can be used for real data.</p>
@@ -221,5 +221,5 @@ docs/
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-07-08 14:02:15
+Build Date UTC : 2019-07-09 02:22:57
 -->
